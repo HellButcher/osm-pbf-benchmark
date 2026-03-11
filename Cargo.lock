@@ -684,7 +684,7 @@ name = "osm-pbf-benchmark"
 version = "0.1.0"
 dependencies = [
  "criterion",
- "osm-pbf-reader 0.1.1 (git+https://github.com/HellButcher/osm-pbf.git?branch=feat%2Fnew-protobuf-v4)",
+ "osm-pbf-reader 0.1.1",
  "osm-pbf-reader 0.1.1 (git+https://github.com/HellButcher/osm-pbf.git?branch=main)",
  "osmpbf",
  "osmpbfreader",
@@ -694,7 +694,6 @@ dependencies = [
 [[package]]
 name = "osm-pbf-proto"
 version = "0.1.1"
-source = "git+https://github.com/HellButcher/osm-pbf.git?branch=feat%2Fnew-protobuf-v4#d2341ba14a57820d39740db8c25475a0184dddc0"
 dependencies = [
  "bitflags",
  "protobuf 4.34.0-release",
@@ -715,12 +714,11 @@ dependencies = [
 [[package]]
 name = "osm-pbf-reader"
 version = "0.1.1"
-source = "git+https://github.com/HellButcher/osm-pbf.git?branch=feat%2Fnew-protobuf-v4#d2341ba14a57820d39740db8c25475a0184dddc0"
 dependencies = [
  "byteorder",
  "crossbeam-queue",
  "flate2",
- "osm-pbf-proto 0.1.1 (git+https://github.com/HellButcher/osm-pbf.git?branch=feat%2Fnew-protobuf-v4)",
+ "osm-pbf-proto 0.1.1",
  "thiserror",
  "xz2",
 ]

@@ -18,8 +18,9 @@ optional = true
 
 [dependencies.osm-pbf-reader-pb4]
 package = "osm-pbf-reader"
-git = "https://github.com/HellButcher/osm-pbf.git"
-branch = "feat/new-protobuf-v4"
+#git = "https://github.com/HellButcher/osm-pbf.git"
+#branch = "feat/new-protobuf-v4"
+path = "../osm-pbf/reader"
 optional = true
 
 [dependencies.osmpbfreader]

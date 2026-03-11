@@ -27,7 +27,7 @@ pub fn decode_sync(pbf_file: &mut File, stats: &Stats, bbox: &BBox) {
     let blobs = Blobs::from_read(pbf_file).unwrap();
     let num_data_blocks = AtomicUsize::new(0);
     for blob in blobs {
-        let data = blob.unwrap().decode_into().unwrap();
+        let data = blob.unwrap().into_decoded().unwrap();
         bbox.extend(calc_bbox(&data, &num_data_blocks));
         drop(black_box(data)); // TODO
     }
@@ -48,7 +48,7 @@ pub fn decode_par(pbf_file: &mut File, stats: &Stats, bbox: &BBox) {
     let blobs = Blobs::from_read(pbf_file).unwrap();
     let num_data_blocks = AtomicUsize::new(0);
     blobs.par_bridge().for_each(|blob| {
-        let data = blob.unwrap().decode_into().unwrap();
+        let data = blob.unwrap().into_decoded().unwrap();
         bbox.extend(calc_bbox(&data, &num_data_blocks));
         drop(black_box(data));
     });
